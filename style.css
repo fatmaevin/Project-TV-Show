@@ -1,76 +1,118 @@
-/* ...existing styles unchanged... */
-
-/* Container for all episodes to display grid */
-#root {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  justify-items: center; /* center cards horizontally */
-  padding-bottom: 20px;
-  margin-top: 20px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightgray;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Episode card styling */
+#root {
+  width: 100%;
+  max-width: 700px;
+}
+
+
+#searchContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center; 
+  gap: 20px; 
+  margin-bottom: 20px;
+}
+
+
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+}
+
+.search-group label {
+  font-weight: bold;
+}
+
+.search-group input,
+.search-group select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.show-card,
 .episode-card {
-  background-color: white;
+  background: white;
   border-radius: 8px;
-  padding: 15px;
-  width: 100%; /* Take full width of grid cell */
-  max-width: 320px; /* max width to keep cards consistent */
+  box-shadow: 5px 5px 25px gray;
+  margin: 20px 0;
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  box-shadow: 6px 2px 5px 5px gray;
-}
-
-/* Episode title */
-.episode-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-weight: 600;
-  font-size: 20px;
   text-align: center;
 }
 
-/* Episode image */
+.show-card > h2,
+.episode-card > h3 {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  color: black;
+  cursor: pointer;
+}
+
+.show-card img,
 .episode-card img {
-  max-width: 100%;
+  width: 210px;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   object-fit: cover;
 }
 
-/* Episode summary */
-.episode-card p {
-  margin-bottom: 10px;
-  line-height: 1.4;
-  text-align: justify;
+.show-card .summary,
+.episode-card .summary {
+  color: black;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
-/* Episode link */
-.episode-card a {
-  text-decoration: none;
-  color: #0066cc;
-  font-weight: 500;
-}
-
-.episode-card a:hover {
-  text-decoration: underline;
-}
-
-/* Info text below episodes */
-.info-text {
-  margin-top: 10px;
-  font-style: italic;
+.show-card .details {
+  font-size: 14px;
   color: #555;
-  text-align: center;
+  line-height: 1.4;
 }
-#search-container,
-#select-container {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  box-shadow: 5px 0 5px -1px gray;
+
+.show-card .details p {
+  margin: 6px 0;
+}
+
+
+button {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background-color: pink;
+}
+
+select {
+  min-width: 200px;
+}
+
+span {
+  font-size: 15px;
+  color: black;
+  margin-left: 12px;
 }
