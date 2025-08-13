@@ -259,3 +259,14 @@ function getEpisodeCode(episode) {
   const episodeStr = String(episode.number).padStart(2, "0");
   return `S${seasonStr}E${episodeStr}`;
 }
+
+function addFooter() {
+  const footer = document.createElement("div");
+  footer.id = "tvmazeFooter";
+  footer.innerHTML =
+    'Source: <a href="https://tvmaze.com/" target="_blank">TVMaze.com</a>';
+  document.body.appendChild(footer);
+}
+document.addEventListener("DOMContentLoaded", () => {
+  addFooter();
+});
